@@ -1,0 +1,65 @@
+body {
+  height: 100vh;
+}
+
+@keyframes pulse-area {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.jp-overlay path {
+  fill: #0000;
+  transition: fill 0.2s;
+}
+
+path.visited-prefecture, path.visited-city {
+  fill: #5CF8;
+  fill-opacity: 0.0;
+  transition: fill-opacity 0.5s linear;
+}
+
+.slow-highlight .visited-city, .slow-highlight .visited-prefecture {
+  transition: fill-opacity 4.0s ease-in;
+}
+
+.highlight-prefecture .visited-prefecture {
+  fill-opacity: 1.0;
+}
+
+.highlight-city .visited-city {
+  fill-opacity: 1.0;
+}
+
+.poi circle {
+  fill: #0EF;
+  fill-opacity: 1.0;
+  transition: fill-opacity 0.2s ease-in;
+}
+
+.zoom-6.poi circle,
+.zoom-7.poi circle,
+.zoom-8.poi circle {
+  fill-opacity: 0.0;
+  transition: fill-opacity 0.2s ease-in;
+}
+.zoom-9.poi circle,
+.zoom-10.poi circle,
+.zoom-11.poi circle,
+.zoom-12.poi circle {
+  transition: fill-opacity 0.2s ease-in;
+}
+
+.poi.slow-highlight circle {
+  transition: fill-opacity 4s ease-in;
+}
+
+.poi.slow-highlight.highlight circle {
+  fill-opacity: 1.0;
+}
