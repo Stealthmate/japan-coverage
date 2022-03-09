@@ -8,5 +8,8 @@ module.exports = {
       .test(/\.svg$/)
       .use('html-loader')
       .loader('html-loader')
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/japan-coverage/'
+    : '/'
 }
