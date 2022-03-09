@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  web:
+    build:
+      dockerfile: docker/Dockerfile
+      context: web
+    ports:
+      - "8080:8080"
+    command: npm run serve
+    environment:
+      NODE_OPTIONS: --openssl-legacy-provider
+    volumes:
+      - "./web:/app"
