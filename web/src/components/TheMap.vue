@@ -69,7 +69,8 @@ export default {
     },
     visitedCities() {
       return theData.reduce((a, x) => {
-        if(!a.includes(x.city)) a.push(x.city);
+        let city = `${x.prefecture}-${x.city}`;
+        if(!a.includes(city)) a.push(city);
         return a;
       }, []);
     }
@@ -164,7 +165,9 @@ export default {
       this.nodes = x[2];
       this.nodes.forEach(node => {
         if(this.visitedPrefectures.includes(node.getAttribute('data-ken'))) node.classList.add('visited-prefecture');
-        if(this.visitedCities.includes(node.getAttribute('data-sikuchoson'))) node.classList.add('visited-city');
+
+        let city = `${node.getAttribute('data-ken')}-${node.getAttribute('data-sikuchoson')}`;
+        if(this.visitedCities.includes(city)) node.classList.add('visited-city');
       })
       this.map.on('zoomend', (e) => {
         this.zoomLevel = e.target._zoom;

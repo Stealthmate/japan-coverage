@@ -43,6 +43,13 @@ path.visited-prefecture, path.visited-city {
   transition: fill-opacity 0.2s ease-in;
 }
 
+.zoom-6.poi,
+.zoom-7.poi,
+.zoom-8.poi {
+  pointer-events: none !important;
+  cursor: pointer !important;
+}
+
 .zoom-6.poi circle,
 .zoom-7.poi circle,
 .zoom-8.poi circle {
