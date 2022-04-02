@@ -24,7 +24,7 @@ export const drawJapanOverlay = async (map) => {
   ).addTo(map);
   svg.childNodes[1].classList.add('jp-overlay');
   let nodes = Array.from(svg.childNodes[1].getElementsByTagName('path'))
-  return [overlay, svg, nodes];
+  return {overlay, svg, nodes};
 }
 
 export const poiPin = () => {
