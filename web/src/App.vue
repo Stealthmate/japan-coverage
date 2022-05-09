@@ -1,5 +1,7 @@
 <template>
-      <TheMap />
+  <v-app>
+    <TheMap />
+  </v-app>
 </template>
 
 <script>

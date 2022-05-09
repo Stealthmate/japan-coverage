@@ -1,17 +1,7 @@
 
-import { drawJapanOverlay, poiPin } from '../utils';
+import { drawJapanOverlay, poiPin, pinBounds, poiPinRadius } from '../utils';
 import theData from '../assets/data.json';
-import { geoOffset } from '../geoutils';
-
-import { fetchCityOverlay } from '../api';
-import { svgOverlay } from 'leaflet';
-
-const pinBounds = (loc, radius) => {
-  let tl = geoOffset(loc[0], loc[1], -45.0, radius);
-  let br = geoOffset(loc[0], loc[1], 135.0, radius);
-  return [tl, br];
-};
-
+import L from 'leaflet';
 export default {
   data() {
     return {
@@ -123,8 +113,7 @@ export default {
 
       this.coveragePois.forEach(poi => {
         poi.pin.dataset.zoom = zoomLevel;
-        let radius = 150 / Math.pow(1.5, zoomLevel);
-        let bounds = pinBounds(poi.location, radius);
+        let bounds = pinBounds(poi.location, poiPinRadius(zoomLevel));
         poi.overlay.setBounds(bounds);
       });
       this.drawHighlight(zoomLevel);

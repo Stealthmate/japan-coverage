@@ -41,7 +41,7 @@ export default {
       this.map.setView(INITIAL_POSITION, this.zoomLevel);
       L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${TOKEN}&fresh=0`,
       {
-        maxZoom: 12,
+        maxZoom: 15,
         minZoom: 6,
         id: 'stealthmate1233/cl0gfuaya00r915lwstk0gaic',
         tileSize: 512,

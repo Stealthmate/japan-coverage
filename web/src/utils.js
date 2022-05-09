@@ -47,3 +47,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
   `;
   return svgElement;
 }
+
+export const pinBounds = (loc, radius) => {
+  let tl = geoOffset(loc[0], loc[1], -45.0, radius);
+  let br = geoOffset(loc[0], loc[1], 135.0, radius);
+  return [tl, br];
+};
+
+export const poiPinRadius = (zoomLevel) => {
+  return 300 / Math.pow(1.65, zoomLevel);
+}

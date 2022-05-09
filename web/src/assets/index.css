@@ -74,3 +74,12 @@ path.visited-prefecture, path.visited-city {
 .poi.slow-highlight.highlight circle {
   fill-opacity: 1.0;
 }
+
+.poiModePOI {
+  fill-opacity: 1.0;
+  fill: #FE7C;
+}
+
+.poiModePOI rect {
+  stroke-width: 0;
+}
